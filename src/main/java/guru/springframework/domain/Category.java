@@ -1,4 +1,4 @@
-package guru.springframework.domain;
+package com.spring.recipes.domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -6,9 +6,6 @@ import lombok.EqualsAndHashCode;
 import javax.persistence.*;
 import java.util.Set;
 
-/**
- * Created by jt on 6/13/17.
- */
 @Data
 @EqualsAndHashCode(exclude = {"recipes"})
 @Entity

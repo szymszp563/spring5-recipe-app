@@ -1,26 +1,23 @@
-package guru.springframework.domain;
+package com.spring.recipes.domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 
-/**
- * Created by jt on 6/13/17.
- */
 @Data
 @EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Notes {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @OneToOne
     private Recipe recipe;
 
-    @Lob
+    @Lob//big values, more than 255 characters
     private String recipeNotes;
 
 }

@@ -1,4 +1,4 @@
-package guru.springframework.domain;
+package com.spring.recipes.domain;
 
 import lombok.Data;
 
@@ -6,9 +6,6 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by jt on 6/13/17.
- */
 @Data
 @Entity
 public class Recipe {
@@ -30,7 +27,7 @@ public class Recipe {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
     private Set<Ingredient> ingredients = new HashSet<>();
 
-    @Lob
+    @Lob//large object
     private Byte[] image;
 
     @Enumerated(value = EnumType.STRING)
@@ -46,7 +43,7 @@ public class Recipe {
     private Set<Category> categories = new HashSet<>();
 
     public void setNotes(Notes notes) {
-        if (notes != null) {
+        if(notes!=null){
             this.notes = notes;
             notes.setRecipe(this);
         }

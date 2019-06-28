@@ -1,15 +1,12 @@
-package guru.springframework.converters;
+package com.spring.recipes.converters;
 
-import guru.springframework.commands.UnitOfMeasureCommand;
-import guru.springframework.domain.UnitOfMeasure;
+import com.spring.recipes.commands.UnitOfMeasureCommand;
+import com.spring.recipes.domain.UnitOfMeasure;
 import lombok.Synchronized;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
-/**
- * Created by jt on 6/21/17.
- */
 @Component
 public class UnitOfMeasureToUnitOfMeasureCommand implements Converter<UnitOfMeasure, UnitOfMeasureCommand> {
 

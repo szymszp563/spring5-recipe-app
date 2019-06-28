@@ -1,24 +1,22 @@
-package guru.springframework.services;
+package com.spring.recipes.services;
 
-import guru.springframework.commands.UnitOfMeasureCommand;
-import guru.springframework.converters.UnitOfMeasureToUnitOfMeasureCommand;
-import guru.springframework.repositories.UnitOfMeasureRepository;
+import com.spring.recipes.commands.UnitOfMeasureCommand;
+import com.spring.recipes.converters.UnitOfMeasureToUnitOfMeasureCommand;
+import com.spring.recipes.repositories.UnitOfMeasureRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-/**
- * Created by jt on 6/28/17.
- */
 @Service
 public class UnitOfMeasureServiceImpl implements UnitOfMeasureService {
 
     private final UnitOfMeasureRepository unitOfMeasureRepository;
     private final UnitOfMeasureToUnitOfMeasureCommand unitOfMeasureToUnitOfMeasureCommand;
 
-    public UnitOfMeasureServiceImpl(UnitOfMeasureRepository unitOfMeasureRepository, UnitOfMeasureToUnitOfMeasureCommand unitOfMeasureToUnitOfMeasureCommand) {
+    public UnitOfMeasureServiceImpl(UnitOfMeasureRepository unitOfMeasureRepository,
+                                    UnitOfMeasureToUnitOfMeasureCommand unitOfMeasureToUnitOfMeasureCommand) {
         this.unitOfMeasureRepository = unitOfMeasureRepository;
         this.unitOfMeasureToUnitOfMeasureCommand = unitOfMeasureToUnitOfMeasureCommand;
     }

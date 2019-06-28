@@ -1,15 +1,12 @@
-package guru.springframework.converters;
+package com.spring.recipes.converters;
 
-import guru.springframework.commands.IngredientCommand;
-import guru.springframework.domain.Ingredient;
+import com.spring.recipes.commands.IngredientCommand;
+import com.spring.recipes.domain.Ingredient;
 import lombok.Synchronized;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
-/**
- * Created by jt on 6/21/17.
- */
 @Component
 public class IngredientToIngredientCommand implements Converter<Ingredient, IngredientCommand> {
 
@@ -29,12 +26,12 @@ public class IngredientToIngredientCommand implements Converter<Ingredient, Ingr
 
         IngredientCommand ingredientCommand = new IngredientCommand();
         ingredientCommand.setId(ingredient.getId());
-        if (ingredient.getRecipe() != null) {
-            ingredientCommand.setRecipeId(ingredient.getRecipe().getId());
-        }
         ingredientCommand.setAmount(ingredient.getAmount());
         ingredientCommand.setDescription(ingredient.getDescription());
-        ingredientCommand.setUom(uomConverter.convert(ingredient.getUom()));
+        ingredientCommand.setUnitOfMeasure(uomConverter.convert(ingredient.getUnitOfMeasure()));
+        if(ingredient.getRecipe()!=null){
+            ingredientCommand.setRecipeId(ingredient.getRecipe().getId());
+        }
         return ingredientCommand;
     }
 }

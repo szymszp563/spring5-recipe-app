@@ -1,6 +1,6 @@
-package guru.springframework.commands;
+package com.spring.recipes.commands;
 
-import guru.springframework.domain.Difficulty;
+import com.spring.recipes.domain.Difficulty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,13 +8,11 @@ import lombok.Setter;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by jt on 6/21/17.
- */
 @Getter
 @Setter
 @NoArgsConstructor
 public class RecipeCommand {
+
     private Long id;
     private String description;
     private Integer prepTime;

@@ -1,13 +1,10 @@
-package guru.springframework.services;
+package com.spring.recipes.services;
 
-import guru.springframework.commands.RecipeCommand;
-import guru.springframework.domain.Recipe;
+import com.spring.recipes.commands.RecipeCommand;
+import com.spring.recipes.domain.Recipe;
 
 import java.util.Set;
 
-/**
- * Created by jt on 6/13/17.
- */
 public interface RecipeService {
 
     Set<Recipe> getRecipes();
@@ -19,4 +16,5 @@ public interface RecipeService {
     RecipeCommand saveRecipeCommand(RecipeCommand command);
 
     void deleteById(Long idToDelete);
+
 }

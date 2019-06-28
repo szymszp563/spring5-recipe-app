@@ -1,4 +1,4 @@
-package guru.springframework.domain;
+package com.spring.recipes.domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -6,9 +6,6 @@ import lombok.EqualsAndHashCode;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-/**
- * Created by jt on 6/13/17.
- */
 @Data
 @EqualsAndHashCode(exclude = {"recipe"})
 @Entity
@@ -21,7 +18,7 @@ public class Ingredient {
     private BigDecimal amount;
 
     @OneToOne(fetch = FetchType.EAGER)
-    private UnitOfMeasure uom;
+    private UnitOfMeasure unitOfMeasure;
 
     @ManyToOne
     private Recipe recipe;
@@ -29,16 +26,16 @@ public class Ingredient {
     public Ingredient() {
     }
 
-    public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom) {
+    public Ingredient(String description, BigDecimal amount, UnitOfMeasure unitOfMeasure) {
         this.description = description;
         this.amount = amount;
-        this.uom = uom;
+        this.unitOfMeasure = unitOfMeasure;
     }
 
-    public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom, Recipe recipe) {
+    public Ingredient(String description, BigDecimal amount, UnitOfMeasure unitOfMeasure, Recipe recipe) {
         this.description = description;
         this.amount = amount;
-        this.uom = uom;
+        this.unitOfMeasure = unitOfMeasure;
         this.recipe = recipe;
     }
 
